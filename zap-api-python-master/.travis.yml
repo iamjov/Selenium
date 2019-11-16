@@ -1,0 +1,14 @@
+dist: xenial
+language: python
+python:
+  - '2.7'
+  - '3.6'
+  - '3.7'
+install:
+  - pip install -U --force setuptools pip
+  - ./setup.py develop
+  - pip install -e '.[tests]'
+
+script:
+  - pylama
+  - py.test
